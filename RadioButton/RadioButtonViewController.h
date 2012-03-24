@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RadioButton.h"
 
-@interface RadioButtonViewController : UIViewController {
+@interface RadioButtonViewController : UIViewController<RadioButtonDelegate> {
     
 }
 
