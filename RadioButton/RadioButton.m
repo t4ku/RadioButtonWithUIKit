@@ -8,6 +8,11 @@
 
 #import "RadioButton.h"
 
+@interface RadioButton()
+-(void)defaultInit;
+-(void)otherButtonSelected:(id)sender;
+-(void)handleButtonTap:(id)sender;
+@end
 
 @implementation RadioButton
 
@@ -59,7 +64,7 @@ static NSMutableDictionary *rb_observers=nil;
         }
     }
     
-    // Unselect other radio buttons
+    // Unselect the other radio buttons
     if (rb_instances) {
         for (int i = 0; i < [rb_instances count]; i++) {
             RadioButton *button = [rb_instances objectAtIndex:i];
@@ -105,7 +110,10 @@ static NSMutableDictionary *rb_observers=nil;
 }
 
 -(void)otherButtonSelected:(id)sender{
-    [_button setSelected:NO];
+    // Called when other radio button instance got selected
+    if(_button.selected){
+        [_button setSelected:NO];        
+    }
 }
 
 #pragma mark - RadioButton init

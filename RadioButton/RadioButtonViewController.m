@@ -46,30 +46,35 @@
     rb2.frame = CGRectMake(10,60,22,22);
     rb3.frame = CGRectMake(10,90,22,22);
     
+    [container addSubview:rb1];
+    [container addSubview:rb2];
+    [container addSubview:rb3];
+
+    [rb1 release];
+    [rb2 release];
+    [rb3 release];
+    
     UILabel *label1 =[[UILabel alloc] initWithFrame:CGRectMake(40, 30, 60, 20)];
     label1.backgroundColor = [UIColor clearColor];
     label1.text = @"Red";
     [container addSubview:label1];
+    [label1 release];
 
     UILabel *label2 =[[UILabel alloc] initWithFrame:CGRectMake(40, 60, 60, 20)];
     label2.backgroundColor = [UIColor clearColor];
     label2.text = @"Green";
     [container addSubview:label2];    
+    [label2 release];
 
     UILabel *label3 =[[UILabel alloc] initWithFrame:CGRectMake(40, 90, 60, 20)];
     label3.backgroundColor = [UIColor clearColor];
     label3.text = @"Blue";
-    [container addSubview:label3];        
+    [container addSubview:label3];
+    [label3 release];
     
     [RadioButton addObserverForGroupId:@"first group" observer:self];
-    
-    [container addSubview:rb1];
-    [container addSubview:rb2];
-    [container addSubview:rb3];
-    
-    [rb1 release];
-    [rb2 release];
-    
+
+    [container release];
     [super viewDidLoad];
 }
 

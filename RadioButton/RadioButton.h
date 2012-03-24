@@ -21,10 +21,5 @@
 @property(nonatomic,assign)NSUInteger index;
 
 -(id)initWithGroupId:(NSString*)groupId index:(NSUInteger)index;
-
 +(void)addObserverForGroupId:(NSString*)groupId observer:(id)observer;
-
--(void)defaultInit;
--(void)otherButtonSelected:(id)sender;
--(void)handleButtonTap:(id)sender;
 @end
