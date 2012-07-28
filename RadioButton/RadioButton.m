@@ -68,7 +68,7 @@ static NSMutableDictionary *rb_observers=nil;
     if (rb_instances) {
         for (int i = 0; i < [rb_instances count]; i++) {
             RadioButton *button = [rb_instances objectAtIndex:i];
-            if (![button isEqual:radioButton]) {
+            if (![button isEqual:radioButton] && [button.groupId isEqualToString:radioButton.groupId]) {
                 [button otherButtonSelected:radioButton];
             }
         }
